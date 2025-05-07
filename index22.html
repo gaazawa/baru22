@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Pembelajaran Sistem Pernapasan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h1 class="text-center text-primary mb-4">Video Pembelajaran Sistem Pernapasan Manusia</h1>
+
+    <div class="ratio ratio-16x9 mb-5">
+      <iframe src="https://www.youtube.com/embed/ID_VIDEO" title="Video Sistem Pernapasan" allowfullscreen></iframe>
+    </div>
+
+    <h2 class="text-center text-success mb-4">Kuis Interaktif</h2>
+    <div class="card shadow-sm p-4 mx-auto" style="max-width: 700px;">
+      <form id="quizForm">
+        <div class="mb-4">
+          <label class="form-label">1. Organ yang menjadi tempat pertukaran gas adalah...</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" value="a" id="q1a">
+            <label class="form-check-label" for="q1a">a. Trakea</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" value="b" id="q1b">
+            <label class="form-check-label" for="q1b">b. Bronkus</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" value="c" id="q1c">
+            <label class="form-check-label" for="q1c">c. Alveolus</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q1" value="d" id="q1d">
+            <label class="form-check-label" for="q1d">d. Laring</label>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">2. Proses masuknya udara ke paru-paru disebut...</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q2" value="a" id="q2a">
+            <label class="form-check-label" for="q2a">a. Ekspirasi</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q2" value="b" id="q2b">
+            <label class="form-check-label" for="q2b">b. Difusi</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q2" value="c" id="q2c">
+            <label class="form-check-label" for="q2c">c. Inspirasi</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q2" value="d" id="q2d">
+            <label class="form-check-label" for="q2d">d. Inhalasi pasif</label>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label">3. Penyakit yang menyebabkan penyempitan saluran pernapasan adalah...</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q3" value="a" id="q3a">
+            <label class="form-check-label" for="q3a">a. Bronkitis</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q3" value="b" id="q3b">
+            <label class="form-check-label" for="q3b">b. Asma</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q3" value="c" id="q3c">
+            <label class="form-check-label" for="q3c">c. Emfisema</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="q3" value="d" id="q3d">
+            <label class="form-check-label" for="q3d">d. Pneumonia</label>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" onclick="checkAnswers()">Lihat Skor</button>
+        </div>
+        <div class="text-center mt-4 result fs-5 fw-bold" id="result"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "c",
+        q2: "c",
+        q3: "b"
+      };
+      let score = 0;
+      for (let key in answers) {
+        const userAnswer = document.querySelector(`input[name="${key}"]:checked`);
+        if (userAnswer && userAnswer.value === answers[key]) {
+          score++;
+        }
+      }
+      document.getElementById("result").innerText = "Skor Anda: " + score + " dari 3";
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
